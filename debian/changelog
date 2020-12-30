@@ -1,3 +1,9 @@
+lxc-android (0.2+gemian) buster; urgency=medium
+
+  * Updated for cosmo
+
+ -- Adam Boardman <adamboardman@gmail.com>  Wed, 30 Dec 2020 19:15:00 +0000
+
 lxc-android (0.1+gemian1) stretch; urgency=medium
 
   * Branched for gemian
