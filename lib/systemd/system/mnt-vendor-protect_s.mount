@@ -1,0 +1,20 @@
+[Unit]
+Description=Droid mount for /mnt/vendor/protect_s
+Before=local-fs.target systemd-modules-load.service
+
+[Mount]
+What=/dev/disk/by-partlabel/protect2
+Where=/mnt/vendor/protect_s
+Type=ext4
+Options=noatime,nosuid,nodev,noauto_da_alloc,commit=1,nodelalloc
+# Options had SELinux context option:  
+
+# Default is 90 which makes mount period too long in case of
+# errors so drop it down a notch.
+TimeoutSec=10
+
+[Install]
+WantedBy=local-fs.target
+
+# From ./out/target/product/cosmopda/root/fstab.mt6771 :
+# /dev/mmcblk0p10 /mnt/vendor/protect_s ext4 noatime,nosuid,nodev,noauto_da_alloc,commit=1,nodelalloc wait,check,formattable
