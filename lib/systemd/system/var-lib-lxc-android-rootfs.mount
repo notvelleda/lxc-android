@@ -5,7 +5,6 @@ Before=lxc-android.service
 [Mount]
 What=/var/lib/lxc/android/android-rootfs.img
 Where=/var/lib/lxc/android/rootfs
-Type=ext2
 Options=ro,noatime
 
 # Default is 90 which makes mount period too long in case of
