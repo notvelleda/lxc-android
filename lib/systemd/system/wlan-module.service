@@ -1,0 +1,13 @@
+[Unit]
+Description=Enable wlan module
+Conflicts=shutdown.target actdead.target
+After=lxc-android.service
+
+[Service]
+Type=oneshot
+RemainAfterExit=yes
+ExecStart=/usr/bin/droid/enable-wifi.sh
+ExecStop=/usr/bin/droid/disable-wifi.sh
+
+[Install]
+WantedBy=multi-user.target

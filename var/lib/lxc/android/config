@@ -1,5 +1,4 @@
 
-#lxc.net.0.type = none
 lxc.net.0.type = empty
 
 lxc.rootfs.path = dir:/var/lib/lxc/android/rootfs
@@ -16,9 +15,6 @@ lxc.cap.drop = mac_admin mac_override sys_time sys_module sys_rawio
 # Blacklist some syscalls which are not safe in privileged containers
 lxc.seccomp.profile = /usr/share/lxc/config/common.seccomp
 
-# Appears to be removed in latest lxc versions
-#lxc.pivotdir = lxc_putold
-
 lxc.hook.pre-start = /var/lib/lxc/android/pre-start.sh
 
 #this might not be needed?
@@ -27,45 +23,6 @@ lxc.hook.pre-start = /var/lib/lxc/android/pre-start.sh
 lxc.apparmor.profile = unconfined
 lxc.autodev = 0
 
-# CGroup whitelist
-lxc.cgroup.devices.deny = a
-## Allow any mknod (but not reading/writing the node)
-lxc.cgroup.devices.allow = c *:* m
-lxc.cgroup.devices.allow = b *:* m
-## Allow specific devices
-### /dev/null
-lxc.cgroup.devices.allow = c 1:3 rwm
-### /dev/zero
-lxc.cgroup.devices.allow = c 1:5 rwm
-### /dev/full
-lxc.cgroup.devices.allow = c 1:7 rwm
-### /dev/tty
-lxc.cgroup.devices.allow = c 5:0 rwm
-### /dev/console
-lxc.cgroup.devices.allow = c 5:1 rwm
-### /dev/ptmx
-lxc.cgroup.devices.allow = c 5:2 rwm
-### /dev/random
-lxc.cgroup.devices.allow = c 1:8 rwm
-### /dev/urandom
-lxc.cgroup.devices.allow = c 1:9 rwm
-### /dev/pts/*
-lxc.cgroup.devices.allow = c 136:* rwm
-### fuse
-lxc.cgroup.devices.allow = c 10:229 rwm
-
-# Extra cgroup device access
-## rtc
-lxc.cgroup.devices.allow = c 254:0 rm
-## tun
-lxc.cgroup.devices.allow = c 10:200 rwm
-## hpet
-lxc.cgroup.devices.allow = c 10:228 rwm
-## kvm
-lxc.cgroup.devices.allow = c 10:232 rwm
-## To use loop devices, copy the following line to the container's
-## configuration file (uncommented).
-#lxc.cgroup.devices.allow = b 7:* rwm
 
 lxc.hook.mount = /usr/share/lxcfs/lxc.mount.hook
 lxc.hook.post-stop = /usr/share/lxcfs/lxc.reboot.hook
