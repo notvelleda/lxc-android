@@ -6,6 +6,7 @@ Before=local-fs.target systemd-modules-load.service
 What=/system_root/system
 Where=/system
 Type=overlay
+Options=lowerdir=/usr/lib/lxc-android/system:/system_root/system
 
 # Default is 90 which makes mount period too long in case of
 # errors so drop it down a notch.
@@ -13,6 +14,3 @@ TimeoutSec=10
 
 [Install]
 WantedBy=local-fs.target
-
-# From ./out/target/product/cosmopda/root/fstab.mt6771 :
-# /dev/mmcblk0p33 / ext4 ro wait,verify,recoveryonly

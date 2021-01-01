@@ -9,6 +9,7 @@ Homepage: https://github.com/gemian/lxc-android
 Package: lxc-android
 Architecture: all
 Depends: ${shlibs:Depends}, ${misc:Depends}, lxc
+Conflicts: droid-hal-cosmopda
 Description: lxc configuration for starting android
  .
  This package provides the configuration for starting android in lxc
