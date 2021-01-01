@@ -1,5 +1,6 @@
 
-lxc.net.0.type = none
+#lxc.net.0.type = none
+lxc.net.0.type = empty
 
 lxc.rootfs.path = dir:/var/lib/lxc/android/rootfs
 

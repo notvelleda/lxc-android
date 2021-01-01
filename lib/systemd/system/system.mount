@@ -3,10 +3,10 @@ Description=Droid mount for /system
 Before=local-fs.target systemd-modules-load.service
 
 [Mount]
-What=/system_root/system
+What=/var/lib/lxc/android/rootfs/system
 Where=/system
 Type=overlay
-Options=lowerdir=/usr/lib/lxc-android/system:/system_root/system
+Options=lowerdir=/usr/lib/lxc-android/system:/var/lib/lxc/android/rootfs/system
 
 # Default is 90 which makes mount period too long in case of
 # errors so drop it down a notch.
