@@ -1,33 +1,30 @@
-
+# Merge networking with primary kernel to allow fuelgauged to talk between its vendor and builtin battery charging modules (none)
 lxc.net.0.type = none
 
 lxc.rootfs.path = dir:/var/lib/lxc/android/rootfs
 
-#lxc.tty.dir = lxc
 lxc.tty.dir = 
 lxc.tty.max = 4
 lxc.pty.max = 1024
 lxc.arch = arm64
 
-# Drop some harmful capabilities
+# Drop some harmful capabilities, but not all of them
 #lxc.cap.drop = mac_admin mac_override sys_time sys_module sys_rawio
 lxc.cap.drop = mac_admin mac_override
 
-# Blacklist some syscalls which are not safe in privileged containers
+# Don't blacklist some syscalls which are not safe in privileged containers, but are needed by android init
 #lxc.seccomp.profile = /usr/share/lxc/config/common.seccomp
 
 lxc.hook.pre-start = /var/lib/lxc/android/pre-start.sh
 
-#this might not be needed?
+# This is not needed as we do it manually within the systemd startup
 #lxc.init_cmd = /init
 
 lxc.apparmor.profile = unconfined
 lxc.autodev = 0
 
-
 lxc.hook.mount = /usr/share/lxcfs/lxc.mount.hook
 lxc.hook.post-stop = /usr/share/lxcfs/lxc.reboot.hook
-
 
 lxc.mount.entry = tmpfs dev tmpfs nosuid 0 0
 lxc.mount.entry = /dev/__properties__ dev/__properties__ bind bind,create=dir 0 0
