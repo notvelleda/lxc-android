@@ -14,7 +14,7 @@ lxc.arch = arm64
 lxc.cap.drop = mac_admin mac_override
 
 # Blacklist some syscalls which are not safe in privileged containers
-lxc.seccomp.profile = /usr/share/lxc/config/common.seccomp
+#lxc.seccomp.profile = /usr/share/lxc/config/common.seccomp
 
 lxc.hook.pre-start = /var/lib/lxc/android/pre-start.sh
 
