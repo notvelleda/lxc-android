@@ -1,0 +1,12 @@
+[Unit]
+Description=Bind mount certain files over /vendor
+After=vendor.mount
+DefaultDependencies=no
+
+[Service]
+Type=oneshot
+RemainAfterExit=true
+ExecStart=/bin/sh /usr/bin/droid/bind_vendor.sh
+
+[Install]
+WantedBy=local-fs.target
