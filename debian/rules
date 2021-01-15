@@ -4,7 +4,4 @@
 	dh $@ --with systemd
 
 override_dh_installsystemd:
-	dh_installsystemd --no-stop-on-upgrade --no-restart-after-upgrade --no-start
-
-override_dh_systemd_start:
-	dh_systemd_start --no-start
+	dh_installsystemd --no-stop-on-upgrade --no-restart-after-upgrade
