@@ -1,0 +1,5 @@
+#!/bin/bash
+if [ "${1}" == "pre" ]; then
+    USER=`loginctl list-sessions | grep seat0 | awk '{print $3}'`
+    /bin/su - ${USER:-gemini} -c "DISPLAY=:0 gemian-lock"
+fi
