@@ -1,8 +1,8 @@
-lxc-android (0.3+gemian) buster; urgency=medium
+lxc-android (0.3+gemian) bullseye; urgency=medium
 
-  * Version Bump
+  * Updated for bullseye
 
- -- Adam Boardman <adamboardman@gmail.com>  Fri, 09 Apr 2021 23:37:56 +0100
+ -- Adam Boardman <adamboardman@gmail.com>  Fri, 09 Jul 2021 20:37:56 +0100
 
 lxc-android (0.2+gemian) buster; urgency=medium
 
