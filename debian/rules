@@ -1,7 +1,4 @@
 #!/usr/bin/make -f
 
 %:
-	dh $@ --with systemd
-
-override_dh_installsystemd:
-	dh_installsystemd --no-stop-on-upgrade --no-restart-after-upgrade
+	dh $@
