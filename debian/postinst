@@ -3,16 +3,9 @@
 systemctl disable lxc
 systemctl disable lxc-net
 
+systemctl enable android-mount.service
 systemctl enable var-lib-lxc-android-rootfs.mount
-systemctl enable vendor.mount
-systemctl enable system_root.mount
 systemctl enable system.mount
-systemctl enable mnt-vendor-protect_s.mount
-systemctl enable mnt-vendor-protect_f.mount
-systemctl enable mnt-vendor-persist.mount
-systemctl enable mnt-vendor-nvdata.mount
-systemctl enable mnt-vendor-nvcfg.mount
-systemctl enable dev-cpuset.mount
 systemctl enable config.mount
 systemctl enable bind-vendor.service
 systemctl enable wlan-module.service

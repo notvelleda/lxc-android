@@ -1,6 +1,6 @@
 [Unit]
 Description=Bind mount certain files over /vendor
-After=vendor.mount
+After=android-mount.service
 DefaultDependencies=no
 
 [Service]
