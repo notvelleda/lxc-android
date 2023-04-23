@@ -14,7 +14,7 @@ NotifyAccess=exec
 ExecStartPre=/usr/bin/lxc-start -n android -d
 ExecStart=/usr/lib/lxc-android/lxc-android-notify
 KillMode=mixed
-TimeoutStopSec=120s
+TimeoutStopSec=30s
 ExecStop=/usr/lib/lxc-android/lxc-android-stop
 Delegate=yes
 

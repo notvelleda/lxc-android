@@ -1,7 +1,7 @@
 #!/bin/sh
 
 /usr/bin/setprop sys.powerctl shutdown
-lxc-wait -n android -s "STOPPED" -t 30
+lxc-wait -n android -s "STOPPED" -t 20
 
 # Teardown mapped super partition
 if [ -e "/dev/disk/by-partlabel/super" ]; then
