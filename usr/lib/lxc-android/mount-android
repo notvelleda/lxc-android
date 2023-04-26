@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 mkdir -p /dev/cpuset
 mount none /dev/cpuset -t cpuset -o nodev,noexec,nosuid
 
