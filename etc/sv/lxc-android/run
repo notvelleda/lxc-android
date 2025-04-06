@@ -1,7 +1,0 @@
-#!/bin/sh
-
-# handles running the lxc container
-
-/usr/bin/lxc-start -n android -d
-/usr/bin/droid/enable-wifi.sh & # this is handled here since i don't know if putting this in its own service is reasonable and i'm not sure what the best way to do that would be
-/usr/lib/lxc-android/lxc-android-notify # this will block until the container stops, which should perfectly satisfy runit's foreground requirement

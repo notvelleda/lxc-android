@@ -76,9 +76,3 @@ if [ $ANDROID_SDK_VERSION -ge 29 ]; then
 		fi
 	done
 fi
-
-# Notify systemd we're done
-systemd-notify --ready --status="Container ready"
-
-# Block on lxc-wait
-lxc-wait -n android -s "STOPPED"
