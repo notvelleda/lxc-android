@@ -1,6 +1,0 @@
-#!/bin/bash -e
-
-systemctl disable lxc
-systemctl disable lxc-net
-
-exit 0

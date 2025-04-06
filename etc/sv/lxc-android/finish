@@ -1,0 +1,6 @@
+#!/bin/sh
+
+# called when the lxc-android service is stopped, used to properly shut down the lxc container
+
+/usr/bin/droid/disable-wifi.sh
+/usr/lib/lxc-android/lxc-android-stop
